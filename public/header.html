@@ -1,0 +1,55 @@
+<div ng-include="'index.ejs'"></div>
+<div id="wrapper" ng-controller="navCtrl" >
+  <div id="header">
+    <h1><a href="./index.html">Comply</a></h1>
+    <a id="menu-trigger" href="#"><i class="fa fa-bars"></i></a> </div>
+  <div id="user-nav">
+   <ul class="btn-group">
+      <li class="btn"><a title="" href="#/"><i class="fa fa-user"></i> <span class="text">{{uname}}</span></a></li>
+    </ul>
+    <ul class="btn-group">
+      <li class="btn"><a title="" href="#/" ng-click="logout()"><i class="fa fa-share"></i> <span class="text">Logout</span></a></li>
+    </ul>
+  </div>
+  <div id="sidebar">
+    <ul>
+      <li class="submenu open"> <a><i class="fa fa-home"></i> <span>Product</span> <i class="arrow fa fa-chevron-right"></i></a>
+        <ul>
+          <li ng-class="{active:isActive('/dashboard')}"><a href="#/dashboard">Search Product</a></li>
+          <li ng-class="{active:isActive('/addproduct')}"><a href="#/addproduct">Add Product</a></li>
+          <li><a href="add-bom.html">Add Bom</a></li>
+        </ul>
+      </li>
+      <li class="submenu open"> <a ><i class="fa fa-flask"></i> <span>Batch</span> <i class="arrow fa fa-chevron-right"></i></a>
+        <ul>
+          <li ng-class="{active:isActive('/batch')"><a href="#/batch">Search Batch</a></li>
+          <li ng-class="{active:isActive('/addbatch')"><a href="#/addbatch">Add Batch</a></li>
+        </ul>
+      </li>
+      <li class="submenu open"> <a><i class="fa fa-th-list"></i> <span>Test Plans</span> <i class="arrow fa fa-chevron-right"></i></a>
+        <ul>
+          <li ng-class="{active:isActive('/addtestplan')"><a href="#/addtestplan">Add/Edit Test Plans</a></li>
+          <li ng-class="{active:isActive('/producttestplan')"><a href="#/producttestplan">Product/Test Plan Association</a></li>
+        </ul>
+      </li>
+      <li class="submenu open"> <a><i class="fa fa-th"></i> <span>Document</span><i class="arrow fa fa-chevron-right"></i></a>
+        <ul>
+          <li ng-class="{active:isActive('/document')"><a ="document.html">Search Documents</a></li>
+        </ul>
+      </li>
+      <li><a href="# "><i class="fa fa-th-list"></i> <span>Reports</span></a></li>
+      <li class="submenu open"> <a ><i class="fa fa-file"></i> <span>Administration</span> <i class="arrow fa fa-chevron-right"></i></a>
+        <ul>
+          <li ng-class="{active:isActive('/company-profile')"><a href="company-profile.html">Company Profile</a></li>
+          <li ng-class="{active:isActive('/users')"><a href="users.html">Users</a></li>
+          <li ng-class="{active:isActive('/manufacturer')"><a href="manufacturer.html">Manufacturer</a></li>
+          <li ng-class="{active:isActive('/retailer')"><a href="retailer.html">Retailer</a></li>
+          <li ng-class="{active:isActive('/testing-lab')"><a href="testing-lab.html">Testing Lab</a></li>
+          <li ng-class="{active:isActive('/material-listing')"><a href="material-listing.html">Material Listing</a></li>
+        </ul>
+      </li>
+	  
+    </ul>
+	
+  </div>
+  

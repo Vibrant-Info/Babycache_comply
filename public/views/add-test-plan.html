@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Add Test Plan</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/font-awesome.css" />
+<link rel="stylesheet" href="css/fullcalendar.css" />
+<link rel="stylesheet" href="css/jquery.jscrollpane.css" />
+<link rel="stylesheet" href="css/jquery-ui.css" />
+<link rel="stylesheet" href="css/colorpicker.css" />
+<link rel="stylesheet" href="css/datepicker.css" />
+<link rel="stylesheet" href="css/icheck/flat/blue.css" />
+<link rel="stylesheet" href="css/select2.css" />
+<!--<link rel="stylesheet" href="css/jquery-ui.css" />-->
+<link rel="stylesheet" href="css/munire.css" />
+<!--[if lt IE 9]>
+		<script type="text/javascript" src="js/respond.min.js"></script>
+		<![endif]-->
+</head>
+<body data-color="grey" class="flat">
+<div id="wrapper">
+  <div id="header">
+    <h1><a href="./index.html">munire Admin</a></h1>
+    <a id="menu-trigger" href="#"><i class="fa fa-bars"></i></a> </div>
+  <div id="user-nav">
+    <ul class="btn-group">
+      <li class="btn"><a title="" href="login.html"><i class="fa fa-share"></i> <span class="text">Logout</span></a></li>
+    </ul>
+  </div>
+  <div id="sidebar">
+    <ul>
+      <li class="submenu"> <a href="#"><i class="fa fa-home"></i> <span>Product</span> <i class="arrow fa fa-chevron-right"></i></a>
+        <ul>
+          <li><a href="index.html">Search Product</a></li>
+          <li><a href="add-product.html">Add Product</a></li>
+          <li><a href="add-bom.html">Add Bom</a></li>
+        </ul>
+      </li>
+      <li class="submenu"> <a href="#"><i class="fa fa-flask"></i> <span>Batch</span> <i class="arrow fa fa-chevron-right"></i></a>
+        <ul>
+          <li><a href="batch.html">Search Batch</a></li>
+          <li><a href="add-batch.html">Add Batch</a></li>
+        </ul>
+      </li>
+      <li class="submenu active"> <a href="#"><i class="fa fa-th-list"></i> <span>Test Plans</span> <i class="arrow fa fa-chevron-right"></i></a>
+        <ul>
+          <li class="active"><a href="add-test-plan.html">Add/Edit Test Plans</a></li>
+          <li><a href="product-test-plan.html">Product/Test Plan Association</a></li>
+        </ul>
+      </li>
+      <li class="submenu"> <a href="#"><i class="fa fa-th"></i> <span>Document</span><i class="arrow fa fa-chevron-right"></i></a>
+        <ul>
+          <li><a href="document.html">Search Documents</a></li>
+        </ul>
+      </li>
+      <li><a href="#"><i class="fa fa-th-list"></i> <span>Reports</span></a></li>
+      <li class="submenu"> <a href="#"><i class="fa fa-file"></i> <span>Administration</span> <i class="arrow fa fa-chevron-right"></i></a>
+        <ul>
+          <li><a href="company-profile.html">Company Profile</a></li>
+          <li><a href="users.html">Users</a></li>
+          <li><a href="manufacturer.html">Manufacturer</a></li>
+          <li><a href="retailer.html">Retailer</a></li>
+          <li><a href="testing-lab.html">Testing Lab</a></li>
+          <li><a href="material-listing.html">Material Listing</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div id="content">
+    <div id="content-header" class="mini">
+      <h1>Add Test Plan</h1>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="fa fa-plus"></i> </span>
+            <h5></h5>
+          </div>
+          </br>
+          <form class="form-horizontal" role="form">
+            <div class="row form group">
+              <div class="col-sm-5">
+                <label class="col-sm-2 col-md-2 col-lg-2 control-label"></label>
+                <div class="selecting-option">
+                  <select class="col-xs-12 col-sm-12 nopadding" id="sel1">
+                    <option>Select plan to edit</option>
+                    <option>Product Code</option>
+                    <option>Product Name</option>
+                    <option>Brand Name</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-4 col-xs-8">
+                <button type="button" class="btn btn-block btn-dark-blue">Add New Test Plan</button>
+              </div>
+            </div>
+            <div class=" row form group">
+              <div class="col-sm-5">
+                <label class="col-sm-2 col-md-2 col-lg-2 control-label"></label>
+                <div class="selecting-option">
+                  <select class="col-xs-12 col-sm-12 nopadding" id="sel1">
+                    <option>Select Plan Category to Add Tests</option>
+                    <option>All</option>
+                    <option>Pre Production</option>
+                    <option>Production</option>
+                    <option>Production Cancelled</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-4 col-xs-8">
+                <button type="button" class="btn btn-block btn-dark-blue">Add New Plan Catogery</button>
+              </div>
+            </div>
+            </br>
+            <div class="row form group">
+              <div class="row">
+                <div class="col-md-5 col-sm-5">
+                  <input type="text" class="form-control" placeholder="Type the Test Name you need to add"/>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-8">
+                  <button type="button" class="btn btn-block btn-dark-blue">Add New Test</button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-6">
+                <label class="control-label">Select Test Validity</label>
+                <label>
+                <input type="checkbox" name="checkboxes" checked/>
+                Jasbeer</label>
+                <label>
+                <input type="checkbox" name="checkboxes"/>
+                Annual</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-5">
+                <label class="control-label">Test Name</label>
+                <textarea rows="3" placeholder="Name" class="form-control"></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script src="js/excanvas.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.custom.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.flot.min.js"></script>
+<script src="js/jquery.flot.resize.min.js"></script>
+<script src="js/jquery.sparkline.min.js"></script>
+<script src="js/fullcalendar.min.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/jquery.dataTables.js"></script>
+<script src="js/munire.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/munire.tables.js"></script>
+<script src="js/munire.jui.js"></script>
+<script src="js/munire.dashboard.js"></script>
+<script src="js/jquery.icheck.min.js"></script>
+<script src="js/munire.form_common.js"></script>
+</body>
+</html>
