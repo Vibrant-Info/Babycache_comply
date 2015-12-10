@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Testing Lab</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/font-awesome.css" />
+<link rel="stylesheet" href="css/fullcalendar.css" />
+<link rel="stylesheet" href="css/jquery.jscrollpane.css" />
+<link rel="stylesheet" href="css/jquery-ui.css" />
+<link rel="stylesheet" href="css/colorpicker.css" />
+<link rel="stylesheet" href="css/datepicker.css" />
+<link rel="stylesheet" href="css/icheck/flat/blue.css" />
+<link rel="stylesheet" href="css/select2.css" />
+<!--<link rel="stylesheet" href="css/jquery-ui.css" />-->
+
+<link rel="stylesheet" href="css/munire.css" />
+<!--[if lt IE 9]>
+		<script type="text/javascript" src="js/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+<body data-color="grey" class="flat">
+<div id="wrapper">
+  <div id="header">
+    <h1><a href="./index.html">munire Admin</a></h1>
+    <a id="menu-trigger" href="#"><i class="fa fa-bars"></i></a> </div>
+  <div id="user-nav">
+    <ul class="btn-group">
+      <li class="btn"><a title="" href="login.html"><i class="fa fa-share"></i> <span class="text">Logout</span></a></li>
+    </ul>
+  </div>
+  <div id="sidebar">
+    <ul>
+      <li class="submenu"> <a href="#"><i class="fa fa-home"></i> <span>Product</span> <i class="arrow fa fa-chevron-right"></i></a>
+        <ul>
+          <li><a href="index.html">Search Product</a></li>
+          <li><a href="add-product.html">Add Product</a></li>
+          <li><a href="add-bom.html">Add Bom</a></li>
+        </ul>
+      </li>
+      <li class="submenu"> <a href="#"><i class="fa fa-flask"></i> <span>Batch</span> <i class="arrow fa fa-chevron-right"></i></a>
+        <ul>
+          <li><a href="batch.html">Search Batch</a></li>
+          <li><a href="add-batch.html">Add Batch</a></li>
+        </ul>
+      </li>
+      <li class="submenu"> <a href="#"><i class="fa fa-th-list"></i> <span>Test Plans</span> <i class="arrow fa fa-chevron-right"></i></a>
+        <ul>
+          <li><a href="add-test-plan.html">Add/Edit Test Plans</a></li>
+          <li><a href="product-test-plan.html">Product/Test Plan Association</a></li>
+        </ul>
+      </li>
+      <li class="submenu"> <a href="#"><i class="fa fa-th"></i> <span>Document</span><i class="arrow fa fa-chevron-right"></i></a>
+        <ul>
+          <li><a href="document.html">Search Documents</a></li>
+        </ul>
+      </li>
+      <li><a href="# "><i class="fa fa-th-list"></i> <span>Reports</span></a></li>
+      <li class="submenu active"> <a href="#"><i class="fa fa-file"></i> <span>Administration</span> <i class="arrow fa fa-chevron-right"></i></a>
+        <ul>
+          <li><a href="company-profile.html">Company Profile</a></li>
+          <li><a href="users.html">Users</a></li>
+          <li><a href="manufacturer.html">Manufacturer</a></li>
+          <li><a href="retailer.html">Retailer</a></li>
+          <li class="active"><a href="testing-lab.html">Testing Lab</a></li>
+          <li><a href="material-listing.html">Material Listing</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div id="content">
+    <div id="content-header" class="mini">
+      <h1>Testing Lab</h1>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="widget-box">
+            <div class="widget-title"> <span class="icon"> <i class="fa fa-th"></i> </span>
+              <h5>This section allows users to add , edit and remove Testing Labs.</h5>
+            </div>
+            </br>
+            <form class="form-inline" role="form">
+              <div class="row">
+                <div class="col-md-2 col-sm-3 col-xs-6"> <a href="#myModaltest" data-toggle="modal" class="btn btn-primary btn-block btn-dark-green">Add Testing Lab</a> </div>
+                <div class="col-md-2 col-sm-3 col-xs-6">
+                  <button type="button" class="btn btn-block btn-dark-green">Edit Testing Lab</button>
+                </div>
+                <div class="col-md-3 col-sm-2">
+                  <input type="text" class="form-control" placeholder="Enter Search Keyword" />
+                </div>
+                <div class="col-sm-2">
+                <label class="col-sm-2 col-md-2 col-lg-2 control-label"></label>
+                  <div class="selecting-option">
+                    <select class="col-xs-12 col-sm-12 nopadding" id="sel1">
+                      <option>Select Search Criteria</option>
+                      <option>Product Code</option>
+                      <option>Product Name</option>
+                      <option>Brand Name</option>
+                    </select>
+                  </div>
+                  </div>
+                <div class="col-md-2 col-sm-2 col-xs-6">
+                  <button type="button" class="btn btn-block btn-dark-green">Go</button>
+                </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="widget-box">
+                  <div class="widget-title"> <span class="icon"> <i class="fa fa-th-list"></i> </span>
+                    <h5>Search Result</h5>
+                  </div>
+                  <div class="widget-content nopadding table-responsive">
+                    <table class="table table-bordered table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th>TESTING LAB CODE</th>
+                          <th>TESTING LAB NAME</th>
+                          <th>CONTACT FIRST NAME</th>
+                          <th>CONTACT LAST NAME</th>
+                          <th>COUNTRY</th>
+                          <th>PHONE</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="gradeX">
+                          <td>24675</td>
+                          <td>Adidas</td>
+                          <td>Bala</td>
+                          <td>Chandra</td>
+                          <td>India</td>
+                          <td>+91987654321</td>
+                        </tr>
+                        <tr class="gradeX">
+                          <td>24675</td>
+                          <td>Adidas</td>
+                          <td>Bala</td>
+                          <td>Chandra</td>
+                          <td>India</td>
+                          <td>+91987654321</td>
+                        </tr>
+                        <tr class="gradeX">
+                          <td>24675</td>
+                          <td>Adidas</td>
+                          <td>Bala</td>
+                          <td>Chandra</td>
+                          <td>India</td>
+                          <td>+91987654321</td>
+                        </tr>
+                        <tr class="gradeX">
+                          <td>24675</td>
+                          <td>Adidas</td>
+                          <td>Bala</td>
+                          <td>Chandra</td>
+                          <td>India</td>
+                          <td>+91987654321</td>
+                        </tr>
+                        <tr class="gradeX">
+                          <td>24675</td>
+                          <td>Adidas</td>
+                          <td>Bala</td>
+                          <td>Chandra</td>
+                          <td>India</td>
+                          <td>+91987654321</td>
+                        </tr>
+                        <tr class="gradeX">
+                          <td>24675</td>
+                          <td>Adidas</td>
+                          <td>Bala</td>
+                          <td>Chandra</td>
+                          <td>India</td>
+                          <td>+91987654321</td>
+                        </tr>
+                        <tr class="gradeX">
+                          <td>24675</td>
+                          <td>Adidas</td>
+                          <td>Bala</td>
+                          <td>Chandra</td>
+                          <td>India</td>
+                          <td>+91987654321</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div id="footer" class="col-xs-12"> 
+    <!--2012 - 2013 &copy; munire Admin. Brought to you by <a href="https://wrapbootstrap.com/user/diablo9983">diablo9983</a>--> 
+  </div>
+</div>
+<div id="myModaltest" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row">
+          <button data-dismiss="modal" class="close" type="button">×</button>
+          <div class="col-xs-12">
+            <div class="widget-box">
+              <div class="widget-title"> <span class="icon"> <i class="fa fa-th-list"></i> </span>
+                <h5>Basic Testing Lab Information</h5>
+              </div>
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label class="control-label col-md-4" for="text">Testing Lab Code*</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-4" for="text">Testing Lab Name*</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-4">Address Line 1</label>
+                  <div class="col-md-8">
+                    <textarea rows="3" class="form-control"></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-4">Address Line 2</label>
+                  <div class="col-md-8">
+                    <textarea rows="3" class="form-control"></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-4" for="text">City</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-4" for="text">State/Province</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-4" for="text">Country</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-4" for="text">Postal Code</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-4" for="text">Phone</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-4" for="text">Fax</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-4" for="text">Contact First Name*</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-4" for="text">Contact Last Name*</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3 col-md-3 col-lg-3 text-center col-sm-offset-3">
+                    <button type="button" class="btn btn-block btn-dark-green">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/excanvas.min.js"></script> 
+<script src="js/jquery.js"></script> 
+<script src="js/jquery-ui.custom.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.flot.min.js"></script> 
+<script src="js/jquery.flot.resize.min.js"></script> 
+<script src="js/jquery.sparkline.min.js"></script> 
+<script src="js/fullcalendar.min.js"></script> 
+<script src="js/jquery.nicescroll.min.js"></script> 
+<script src="js/jquery.dataTables.js"></script> 
+<script src="js/munire.js"></script> 
+<script src="js/select2.min.js"></script> 
+<script src="js/munire.tables.js"></script> 
+<script src="js/munire.jui.js"></script> 
+<script src="js/munire.dashboard.js"></script> 
+<script src="js/jquery.icheck.min.js"></script> 
+<script src="js/munire.form_common.js"></script>
+</body>
+</html>
